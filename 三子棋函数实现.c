@@ -103,7 +103,10 @@ int IsFull(char board[ROW][COL],int row,int col)
 	{
 		for (j = 0; j < col; j++)
 		{
-			return 0;//没满
+			if (board[i][j] == ' ')
+			{
+				return 0;//没满
+			}
 		}
 	}
 	return 1;//满了
@@ -138,3 +141,4 @@ char IsWin(char board[ROW][COL], int row, int col)
 		return 'Q';//满了 平局
 	}
 	return 'C';// 没满 继续
+}
